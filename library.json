@@ -1,0 +1,12 @@
+{
+    "id": "{56F84CFE-C475-469C-8DC1-EB08911997F9}",
+    "name": "SymconGoogleCloud",
+    "author": "Burkhard Kneiseler",
+    "url": "https://github.com/Burki24/SymconGoogleCloud",
+    "compatibility": {
+        "version": "9.0"
+    },
+    "version": "0.1",
+    "build": 0,
+    "date": 0
+}

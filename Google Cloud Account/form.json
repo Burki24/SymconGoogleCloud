@@ -1,0 +1,9 @@
+{
+    "elements": [
+        {
+            "type": "Label",
+            "caption": "Google sign-in is not available in this development build."
+        }
+    ],
+    "actions": []
+}

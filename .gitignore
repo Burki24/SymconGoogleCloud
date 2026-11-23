@@ -1,0 +1,5 @@
+/.php-cs-fixer.cache
+/tests/stubs/
+/private/
+/.env*
+/*.local.*

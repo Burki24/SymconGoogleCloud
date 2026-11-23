@@ -1,0 +1,14 @@
+{
+    "id": "{E17753C6-3C5B-4B46-BDDF-50B1279E34F0}",
+    "name": "Google Cloud Account",
+    "type": 2,
+    "vendor": "Google",
+    "aliases": [
+        "Google Cloud Konto"
+    ],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "GCAC",
+    "url": "https://github.com/Burki24/SymconGoogleCloud/blob/dev/Google%20Cloud%20Account/README.md"
+}

@@ -28,6 +28,7 @@ bleiben in Schritt 2 offen. Die Hardwareabnahme steht aus.
 
 - [Kontogrenze und Cachevertrag](docs/adr/0001-library-and-account-boundary.md)
 - [Find-Hub-Geräteliste](docs/adr/0002-find-hub-inventory.md)
+- [Automatische Versionierung auf `dev`](docs/automatic-versioning.md)
 - SymconiCloud unter `../SymconiCloud`, insbesondere Konto-README und ADR 0001,
   0002, 0007, 0008, 0011 und 0012 für Konto, Geräte, Anwesenheit und Karte
 - OpenWoIst unter `../OpenWoIst`, insbesondere ADR 0001 zu Standortquellen

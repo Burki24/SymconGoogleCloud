@@ -1,7 +1,14 @@
 {
     "translations": {
         "de": {
-            "Google sign-in is not available in this development build.": "Die Google-Anmeldung ist in diesem Entwicklungsstand noch nicht verfügbar."
+            "This build can retrieve a device list with an existing Find Hub access token.": "Dieser Entwicklungsstand kann die Geräteliste mit einem vorhandenen Find-Hub-Zugriffstoken abrufen.",
+            "Find Hub access token": "Find-Hub-Zugriffstoken",
+            "Refresh devices": "Geräte aktualisieren",
+            "Device list cached": "Geräteliste lokal gespeichert",
+            "Device list not requested": "Geräteliste noch nicht abgerufen",
+            "Valid Find Hub access token required": "Gültiges Find-Hub-Zugriffstoken erforderlich",
+            "Find Hub device request failed": "Find-Hub-Geräteabfrage fehlgeschlagen",
+            "Find Hub request temporarily paused": "Find-Hub-Geräteabfrage vorübergehend pausiert"
         }
     }
 }

@@ -16,13 +16,18 @@ Abweichungen sind die verfügbaren Schnittstellen und die Fähigkeiten der Gerä
 | 5 · Google-Dienste über OAuth | Offizielle OAuth-2.0-Autorisierung dienstbezogen erschließen. Kontakte und Fotos sind die Pendants aus SymconiCloud. Für Kalender besteht bereits OpenCalendar. | Berechtigungen, Erneuerung und Widerruf je Dienst prüfen. Bei Fotos gelten die Google-Picker- und Library-Grenzen. |
 | 6 · Funktionsabgleich | Unterstützte Find-Hub-Aktionen und weitere Google-Dienste anhand belegter Schnittstellen ergänzen. Für Freigaben, Verloren-Modus und Fernlöschung zunächst Zugriff und Gerätewirkung separat belegen. | Funktionsmatrix anhand der Referenz aktualisieren. Zustandsänderungen und irreversible Aktionen erfordern eine eigene Abnahme. |
 
-Schritt 1 ist umgesetzt. Die Cache-Daten werden im Test über die offizielle
-Stub-Laufzeit eingespeist. Das ist ein isolierter Nachweis des Modulvertrags.
-Der nächste technische Meilenstein ist der direkte Find-Hub-Abruf.
+Schritt 1 ist umgesetzt. In Schritt 2 ist der direkte Inventarabruf mit
+einem bereits autorisierten Find-Hub-Token implementiert. Die Stub-Tests
+prüfen Android-Gerät und Bluetooth-Tracker anhand synthetischer
+Protobuf-Antworten sowie Authentifizierungsfehler, beschädigte Antworten
+und das Respektieren einer Abfragepause. Eine gültige Geräteliste kann
+auch leer sein. Direkte Anmeldung, Standortberichte und Entschlüsselung
+bleiben in Schritt 2 offen. Die Hardwareabnahme steht aus.
 
 ## Projektunterlagen
 
 - [Kontogrenze und Cachevertrag](docs/adr/0001-library-and-account-boundary.md)
+- [Find-Hub-Geräteliste](docs/adr/0002-find-hub-inventory.md)
 - SymconiCloud unter `../SymconiCloud`, insbesondere Konto-README und ADR 0001,
   0002, 0007, 0008, 0011 und 0012 für Konto, Geräte, Anwesenheit und Karte
 - OpenWoIst unter `../OpenWoIst`, insbesondere ADR 0001 zu Standortquellen
@@ -43,6 +48,7 @@ php-cs-fixer fix --dry-run --diff --allow-risky=yes --config=.style/.php-cs-fixe
 ```
 
 CI verwendet die gemeinsamen Workflows aus Symcon_ModuleCI v1.0.0.
-Der zentrale DebugFlowHelper erfasst `Create`, `ApplyChanges` und
-`GCAC_GetDevices`. Der Cache-Lesevorgang meldet Zustand und Geräteanzahl.
-Die Positions- und Gerätewerte bleiben im Export für zugewiesene Consumer.
+Der zentrale DebugFlowHelper erfasst Create, ApplyChanges, RequestAction,
+GCAC_RefreshDevices und GCAC_GetDevices. Der Geräteabruf meldet sichere
+Fehlergründe. Der Cache-Lesevorgang meldet Zustand und Geräteanzahl. Private
+Werte stehen ausschließlich im dafür vorgesehenen Cacheexport.

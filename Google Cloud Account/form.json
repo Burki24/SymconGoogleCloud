@@ -2,8 +2,46 @@
     "elements": [
         {
             "type": "Label",
-            "caption": "Google sign-in is not available in this development build."
+            "caption": "This build can retrieve a device list with an existing Find Hub access token."
         }
     ],
-    "actions": []
+    "actions": [
+        {
+            "type": "PasswordTextBox",
+            "name": "FindHubAccessToken",
+            "caption": "Find Hub access token"
+        },
+        {
+            "type": "Button",
+            "caption": "Refresh devices",
+            "onClick": "IPS_RequestAction($id, 'RefreshDevices', $FindHubAccessToken);"
+        }
+    ],
+    "status": [
+        {
+            "code": 102,
+            "icon": "active",
+            "caption": "Device list cached"
+        },
+        {
+            "code": 104,
+            "icon": "inactive",
+            "caption": "Device list not requested"
+        },
+        {
+            "code": 201,
+            "icon": "error",
+            "caption": "Valid Find Hub access token required"
+        },
+        {
+            "code": 202,
+            "icon": "error",
+            "caption": "Find Hub device request failed"
+        },
+        {
+            "code": 203,
+            "icon": "error",
+            "caption": "Find Hub request temporarily paused"
+        }
+    ]
 }

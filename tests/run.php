@@ -104,4 +104,5 @@ foreach ([
 }
 
 echo "Google Cloud account and device cache tests passed.\n";
+require __DIR__ . '/find-hub.php';
 require __DIR__ . '/validate_structure.php';

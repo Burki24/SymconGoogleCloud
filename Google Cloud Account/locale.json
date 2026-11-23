@@ -1,7 +1,8 @@
 {
     "translations": {
         "de": {
-            "This build can retrieve a device list with an existing Find Hub access token.": "Dieser Entwicklungsstand kann die Geräteliste mit einem vorhandenen Find-Hub-Zugriffstoken abrufen.",
+            "To refresh the device list, enter the short-lived Android Device Manager access token for your Google account.": "Für die Geräteliste brauchst du das kurzlebige Android-Device-Manager-Zugriffstoken deines Google-Kontos.",
+            "How to get a Find Hub access token": "Anleitung zum Find-Hub-Zugriffstoken",
             "Find Hub access token": "Find-Hub-Zugriffstoken",
             "Refresh devices": "Geräte aktualisieren",
             "Device list cached": "Geräteliste lokal gespeichert",

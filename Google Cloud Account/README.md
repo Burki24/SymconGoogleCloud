@@ -5,6 +5,28 @@ lokal als JSON bereit. Es unterscheidet Android-Geräte und Bluetooth-Tracker
 mit einer verwendbaren Gerätekennung. Die eigene Anmeldung und das Lesen
 von Standortberichten folgen in weiteren Ausbaustufen.
 
+## Find-Hub-Zugriffstoken beziehen
+
+Google führt Find Hub außerhalb der [öffentlich dokumentierten OAuth-Berechtigungen](https://developers.google.com/identity/protocols/oauth2/scopes).
+Für den derzeitigen Test benötigt Symcon das kurzlebige Zugriffstoken für den
+Dienst Android Device Manager (`android_device_manager`). Der unabhängige,
+experimentelle Client [GoogleFindMyTools](https://github.com/leonboe1/GoogleFindMyTools#how-to-use)
+kann dieses Token lokal für dein eigenes Google-Konto beziehen.
+
+1. Richte GoogleFindMyTools nach der Projektanleitung mit Python, Chrome und
+   den angegebenen Python-Abhängigkeiten ein.
+2. Führe im Projektordner in der aktivierten Python-Umgebung den folgenden
+   Befehl aus. Beim ersten Aufruf führt das Tool durch die Anmeldung bei
+   Google. [Token-Einstieg im Quellcode](https://github.com/leonboe1/GoogleFindMyTools/blob/main/Auth/adm_token_retrieval.py)
+
+   ```text
+   python -m Auth.adm_token_retrieval
+   ```
+
+3. Übernimm den ausgegebenen Zugriffstoken-Wert direkt in das Symcon-Feld
+   **Find-Hub-Zugriffstoken** und klicke auf **Geräte aktualisieren**. Behandle
+   den Token-Wert und die lokalen Anmeldedateien des Tools wie Zugangsdaten.
+
 ## Geräteliste abrufen
 
 Wenn ein gültiges Find-Hub-Zugriffstoken vorliegt, kann es im Aktionsfeld

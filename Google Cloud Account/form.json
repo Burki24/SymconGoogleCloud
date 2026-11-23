@@ -2,10 +2,16 @@
     "elements": [
         {
             "type": "Label",
-            "caption": "This build can retrieve a device list with an existing Find Hub access token."
+            "caption": "To refresh the device list, enter the short-lived Android Device Manager access token for your Google account."
         }
     ],
     "actions": [
+        {
+            "type": "Button",
+            "caption": "How to get a Find Hub access token",
+            "link": true,
+            "onClick": "echo 'https://github.com/Burki24/SymconGoogleCloud/blob/dev/Google%20Cloud%20Account/README.md#find-hub-zugriffstoken-beziehen';"
+        },
         {
             "type": "PasswordTextBox",
             "name": "FindHubAccessToken",

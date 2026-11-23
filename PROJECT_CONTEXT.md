@@ -24,6 +24,25 @@ und das Respektieren einer Abfragepause. Eine gültige Geräteliste kann
 auch leer sein. Direkte Anmeldung, Standortberichte und Entschlüsselung
 bleiben in Schritt 2 offen. Die Hardwareabnahme steht aus.
 
+### Machbarkeitsprüfung zur integrierten Anmeldung
+
+Für den regulären Google-Browserlogin benötigt SymconGoogleCloud eine
+Find-Hub-Berechtigung für seinen OAuth-Client. Die öffentliche Scope-Liste
+enthält keine entsprechende Berechtigung. Googles Find-Hub-Partnerleitfaden
+beschreibt die Einbindung von Zubehör. Der betrachtete Community-Client
+liest Sitzungsdaten aus einem eingebetteten Browser. Für öffentliche
+OAuth-Autorisierung sieht Google einen externen Browser vor.
+[Google-OAuth-Berechtigungen](https://developers.google.com/identity/protocols/oauth2/scopes) ·
+[Find-Hub-Partnerleitfaden](https://developers.google.com/nearby/fast-pair/landing-page-find-hub) ·
+[Google-OAuth-Richtlinien](https://developers.google.com/identity/protocols/oauth2/policies)
+
+Ein Stub-Test hat das Konto mit seinem gespeicherten Zustand neu erstellt.
+Die zwei zuvor geladenen Testgeräte blieben im Cache. Eine neue Abfrage ohne
+Autorisierung erreichte den Transport nicht. Für die Abnahme der integrierten
+Anmeldung muss ein eigener Client im externen Google-Browser autorisiert
+werden und den Find-Hub-Zugriff nach dem Wiederanlauf selbst erneuern können.
+Der Kontoabruf und die Entschlüsselung mit echten Geräten bleiben offen.
+
 ## Projektunterlagen
 
 - [Kontogrenze und Cachevertrag](docs/adr/0001-library-and-account-boundary.md)
